@@ -22,7 +22,7 @@ function ReaderHighlight:init()
 			--- start of button
         ["01_highlight"] = function(this) 			-- ["name for button"]=buttons get selected based on numerical order. If you change one, renumber all buttons
             return {
-                text = _("red"), -- the text that will show on the button
+                icon = _("WTF"), -- the text that will show on the button
                 enabled = this.hold_pos ~= nil,	-- triggers the button (don't change)
                 callback = function()
                     this:saveHighlightFormatted(true,"lighten","red")		-- the stuff it does
@@ -38,48 +38,56 @@ function ReaderHighlight:init()
 		
         ["02_highlight"] = function(this)
             return {
-                icon = _("icon_name"), --- put icon in resources/icons/mdlight
+                icon = _("Sana all"), --- put icon in resources/icons/mdlight
                 enabled = this.hold_pos ~= nil,
                 callback = function()
-                    this:saveHighlightFormatted(true,"lighten","orange")
+                    this:saveHighlightFormatted(true,"lighten","purple")
                     this:onClose()
                 end,
 			    hold_callback = function()
-                    this:saveHighlightFormatted(true,"underscore","orange")		
+                    this:saveHighlightFormatted(true,"underscore","purple")		
                     this:onClose()
                 end,
             }
         end,
 		["03_highlight"] = function(this)
             return {
-                text = _("🍌"),
+                icon = _("Kilig"),
                 enabled = this.hold_pos ~= nil,
                 callback = function()
-                    this:saveHighlightFormatted(true,"lighten","yellow")
+                    this:saveHighlightFormatted(true,"lighten","pink")
                     this:onClose()
                 end,
 				hold_callback = function()
-                    this:saveHighlightFormatted(true,"underscore","yellow")		
+                    this:saveHighlightFormatted(true,"underscore","pink")		
                     this:onClose()
                 end,
             }
         end,
         ["04_highlight"] = function(this)
             return {
-                icon = _("icon_name"), 
+                icon = _("Hear me out"), 
                 enabled = this.hold_pos ~= nil,
                 callback = function()
-                    this:saveHighlightFormatted(true,"lighten","green")
+                    this:saveHighlightFormatted(true,"lighten","cyan")
+                    this:onClose()
+					 end,
+				hold_callback = function()
+                    this:saveHighlightFormatted(true,"underscore","cyan")		
                     this:onClose()
                 end,
             }
         end,
         ["05_highlight"] = function(this)
             return {
-                text = _("🫒"),
+                icon = _("Sad"),
                 enabled = this.hold_pos ~= nil,
                 callback = function()
-                    this:saveHighlightFormatted(true,"lighten","olive")
+                    this:saveHighlightFormatted(true,"lighten","blue")
+                    this:onClose()
+					 end,
+				hold_callback = function()
+                    this:saveHighlightFormatted(true,"underscore","blue")		
                     this:onClose()
                 end,
             }
@@ -87,10 +95,14 @@ function ReaderHighlight:init()
 	
         ["06_highlight"] = function(this)
             return {
-                text = _("cyan"),
+                icon = _("Character"),
                 enabled = this.hold_pos ~= nil,
                 callback = function()
-                    this:saveHighlightFormatted(true,"lighten","cyan")
+                    this:saveHighlightFormatted(true,"lighten","yellow")
+                    this:onClose()
+					 end,
+				hold_callback = function()
+                    this:saveHighlightFormatted(true,"underscore","yellow")		
                     this:onClose()
                 end,
             }
@@ -98,10 +110,14 @@ function ReaderHighlight:init()
         
         ["07_highlight"] = function(this)
             return {
-                text = _("blue"),
+                icon = _("Aww"),
                 enabled = this.hold_pos ~= nil,
                 callback = function()
-                    this:saveHighlightFormatted(true,"lighten","blue")
+                    this:saveHighlightFormatted(true,"lighten","olive")
+                    this:onClose()
+					 end,
+				hold_callback = function()
+                    this:saveHighlightFormatted(true,"underscore","olive")		
                     this:onClose()
                 end,
             }
@@ -109,23 +125,57 @@ function ReaderHighlight:init()
         -- 
         ["8_highlight"] = function(this)
             return {
-                text = _("🍇"),
+                icon = _("Heartbreak"),
                 enabled = this.hold_pos ~= nil,      
                 callback = function()
-                    this:saveHighlightFormatted(true,"lighten","purple")
+                    this:saveHighlightFormatted(true,"lighten","grey")
+                    this:onClose()
+					 end,
+				hold_callback = function()
+                    this:saveHighlightFormatted(true,"underscore","grey")		
                     this:onClose()
                 end,
             }
         end,
-		["09_dictionary"] = function(this, index)
+		["9_highlight"] = function(this)
             return {
-                icon = "dictionary",
+                icon = _("Funny"),
+                enabled = this.hold_pos ~= nil,      
                 callback = function()
-                    this:lookupDict(index)
-                    -- We don't call this:onClose(), same reason as above
+                    this:saveHighlightFormatted(true,"lighten","turquoise")
+                    this:onClose()
+					 end,
+				hold_callback = function()
+                    this:saveHighlightFormatted(true,"underscore","turquoise")		
+                    this:onClose()
                 end,
-		hold_callback = function()
-                    this:onHighlightSearch() -- search highlighted text from the book
+            }
+        end,
+		["10_highlight"] = function(this)
+            return {
+                icon = _("Spicy"),
+                enabled = this.hold_pos ~= nil,      
+                callback = function()
+                    this:saveHighlightFormatted(true,"lighten","green")
+                    this:onClose()
+					 end,
+				hold_callback = function()
+                    this:saveHighlightFormatted(true,"underscore","green")		
+                    this:onClose()
+                end,
+            }
+        end,
+		["11_highlight"] = function(this)
+            return {
+                icon = _("Deep"),
+                enabled = this.hold_pos ~= nil,      
+                callback = function()
+                    this:saveHighlightFormatted(true,"lighten","indigo")
+                    this:onClose()
+					 end,
+				hold_callback = function()
+                    this:saveHighlightFormatted(true,"underscore","indigo")		
+                    this:onClose()
                 end,
             }
         end,
