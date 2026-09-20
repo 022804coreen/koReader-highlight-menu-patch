@@ -144,6 +144,17 @@ function ReaderHighlight:init()
                 end,
             }
         end,
+
+		["12_highlight"] = function(this)
+            return {
+                icon = _("Favorite"),
+                enabled = this.hold_pos ~= nil,      
+                callback = function()
+                    this:saveHighlightFormatted(true,"lighten","orange")
+                    this:onClose()
+                end,
+            }
+        end,
 --
 
 --- you can delete this function if you don't care about having the following functionality:
